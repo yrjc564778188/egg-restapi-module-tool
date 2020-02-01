@@ -31,6 +31,21 @@ const Routers = function({ history, app }) {
       path: "/tableManager/edit/:id",
       models: () => [import("./models/tableForm")],
       component: () => import("./routes/tableManager/TableForm")
+    },
+    {
+      path: "/userFill",
+      models: () => [import("./models/userFill")],
+      component: () => import("./routes/userFill/index")
+    },
+    {
+      path: "/userFill/create",
+      models: () => [import("./models/userFillForm")],
+      component: () => import("./routes/userFill/TableForm")
+    },
+    {
+      path: "/userFill/edit/:id",
+      models: () => [import("./models/userFillForm")],
+      component: () => import("./routes/userFill/TableForm")
     }
   ];
 
@@ -41,7 +56,7 @@ const Routers = function({ history, app }) {
           <Route
             exact
             path="/"
-            render={() => <Redirect to="/tableManager" />}
+            render={() => <Redirect to="/userFill" />}
           />
           {routes.map(({ path, ...dynamics }, key) => (
             <Route
